@@ -1,0 +1,19 @@
+{
+  "name": "rtsupport",
+  "version": "1.0.0",
+  "description": "Real Time Support-FE",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/Helge801/rtsupport-fe.git"
+  },
+  "author": "Helge801",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Helge801/rtsupport-fe/issues"
+  },
+  "homepage": "https://github.com/Helge801/rtsupport-fe#readme"
+}
