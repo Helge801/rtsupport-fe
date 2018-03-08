@@ -15,5 +15,13 @@
   "bugs": {
     "url": "https://github.com/Helge801/rtsupport-fe/issues"
   },
-  "homepage": "https://github.com/Helge801/rtsupport-fe#readme"
+  "homepage": "https://github.com/Helge801/rtsupport-fe#readme",
+  "devDependencies": {
+    "babel-loader": "^5.3.3",
+    "webpack": "^4.1.1",
+    "webpack-cli": "^2.0.10"
+  },
+  "dependencies": {
+    "is-accessor-descriptor": "^2.0.0"
+  }
 }
