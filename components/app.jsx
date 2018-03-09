@@ -6,7 +6,8 @@ class App extends Component {
     constructor(props){
         super(props);
         this.state = {
-            channels: []
+            channels: [],
+            activeChannel: {}
         };
     }
 
@@ -18,7 +19,9 @@ class App extends Component {
     }
 
     setChannel(activeChannel){
-        this.setState({activeChannel});
+        console.log(activeChannel);
+        console.log(this.state);
+        this.setState({activeChannel: activeChannel});
         //TODO: Get Channel Messages
     }
 
@@ -27,7 +30,7 @@ class App extends Component {
             <div className="app">
                 <div className="nav">
                     <ChannelSection 
-                        channels={this.state.channels}
+                        {...this.state}
                         addChannel={this.addChannel.bind(this)}
                         setChannel={this.setChannel.bind(this)}
                     />
