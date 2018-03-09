@@ -6,9 +6,16 @@ import PropTypes from 'prop-types';
 class ChannelSection extends Component {
     render(){
         return (
-            <div>
-                <ChannelList {...this.props} />
-                <ChannelForm {...this.props} />
+            <div className="support pannel panel-primary">
+                <div className="panel-heading">
+                    <strong>
+                        Channels
+                    </strong>
+                </div>
+                <div className="panel-body channels">
+                    <ChannelList {...this.props} />
+                    <ChannelForm {...this.props} />
+                </div>
             </div>
         )
     }
