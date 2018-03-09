@@ -23,6 +23,7 @@
     "webpack-cli": "^2.0.10"
   },
   "dependencies": {
-    "is-accessor-descriptor": "^2.0.0"
+    "is-accessor-descriptor": "^2.0.0",
+    "react-dom": "^16.2.0"
   }
 }

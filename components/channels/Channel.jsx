@@ -1,4 +1,6 @@
 import React, {Component} from 'react';
+import PropTypes from 'prop-types';
+
 class Channel extends Component {
     onClick(e){
         e.preventDefault();
@@ -8,17 +10,19 @@ class Channel extends Component {
 
     render(){
         const {channel} = this.props;
+        return(
         <li>
             <a onClick={this.onClick.bind(this)}>
                 {channel.name}
             </a>
         </li>
+        )
     }
 }
 
 Channel.propTypes = {
-    channel: React.propTypes.object.isRequired,
-    setChannel: React.propTypes.func.isRequired
+    channel: PropTypes.object.isRequired,
+    setChannel: PropTypes.func.isRequired
 }
 
 export default Channel
