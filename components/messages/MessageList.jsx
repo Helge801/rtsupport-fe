@@ -4,7 +4,7 @@ import Message from './Message.jsx';
 
 class MessageList extends Component {
     render(){
-        let messages = this.props.activeChannel.messages;
+        let messages = this.props.messages;
         return (
             <ul>{
                 messages.map(message => {
@@ -21,7 +21,7 @@ class MessageList extends Component {
 }
 
 MessageList.propTypes = {
-    activeChannel: PropTypes.object.isRequired,
+    messages: PropTypes.array.isRequired
 };
 
 export default MessageList;
