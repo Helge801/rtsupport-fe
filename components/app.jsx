@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import ChannelSection from './channels/ChannelSection.jsx';
 import UserSection from './users/UserSection.jsx';
 import PropTypes from 'prop-types';
+import MessageSection from './messages/MessageSection.jsx';
 
 class App extends Component {
     constructor(props){
@@ -9,14 +10,16 @@ class App extends Component {
         this.state = {
             channels: [],
             users: [],
-            activeChannel: {},
+            activeChannel: {
+                messages: []
+            },
             activeUser: {},
         };
     }
 
     addChannel(name){
         let {channels} = this.state;
-        channels.push({id: channels.length, name});
+        channels.push({id: channels.length, name: name, messages: []});
         this.setState({channels});
         //TODO: Send to API
     }
@@ -28,10 +31,12 @@ class App extends Component {
     }
 
     setChannel(activeChannel){
-        console.log(activeChannel);
-        console.log(this.state);
         this.setState({activeChannel: activeChannel});
         //TODO: Get Channel Messages
+    }
+
+    setUser(activeUser){
+        this.setState({activeUser: activeUser});
     }
 
     render(){
@@ -46,8 +51,12 @@ class App extends Component {
                     <UserSection 
                         {...this.state}
                         addUser={this.addUser.bind(this)}
+                        setUser={this.setUser.bind(this)}
                     />
                 </div>
+                <MessageSection 
+                    {...this.state}
+                />
             </div>
         )
     }
