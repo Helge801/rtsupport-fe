@@ -5,7 +5,9 @@ class MessageForm extends Component {
 
     onSubmit(e){
         e.preventDefault();
-        console.log("this is your message: ", this.refs.message.value);
+        if(this.props.addMessage(this.refs.message.value)){
+            this.refs.message.value = '';
+        }
     }
 
     render(){
@@ -23,5 +25,9 @@ class MessageForm extends Component {
         );
     }
 }
+
+MessageForm.propTypes = {
+    addMessage: PropTypes.func.isRequired
+};
 
 export default MessageForm

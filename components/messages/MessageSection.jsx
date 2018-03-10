@@ -18,7 +18,7 @@ class MessageSection extends Component {
                         {...this.props}
                     />
                     <MessageForm 
-                        
+                        {...this.props}
                     />
                 </div>
             </div>
@@ -27,7 +27,8 @@ class MessageSection extends Component {
 }
 
 MessageSection.protoTypes = {
-    activeChannel: PropTypes.object.isRequired
+    activeChannel: PropTypes.object.isRequired,
+    addMessage: PropTypes.func.isRequired
 };
 
 export default MessageSection

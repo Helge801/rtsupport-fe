@@ -30,6 +30,19 @@ class App extends Component {
         this.setState({users: users});
     }
 
+    addMessage(message){
+        if(this.state.activeUser.name == undefined || this.state.activeChannel.name == undefined){
+            alert("You must select Channel and User");
+            return false;
+        } else {
+            let messages = this.state.activeChannel.messages;
+            messages.push({id: messages.length, body: message, user: this.state.activeUser.name, time: Date.now()});
+            this.setState({messages: messages});
+            return true;
+        }
+        
+    }
+
     setChannel(activeChannel){
         this.setState({activeChannel: activeChannel});
         //TODO: Get Channel Messages
@@ -56,6 +69,7 @@ class App extends Component {
                 </div>
                 <MessageSection 
                     {...this.state}
+                    addMessage={this.addMessage.bind(this)}
                 />
             </div>
         )

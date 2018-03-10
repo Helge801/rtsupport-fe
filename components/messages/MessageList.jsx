@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
+import Message from './Message.jsx';
 
 class MessageList extends Component {
     render(){
@@ -8,9 +9,10 @@ class MessageList extends Component {
             <ul>{
                 messages.map(message => {
                     return(
-                        <li>
-                            {message}
-                        </li>
+                        <Message 
+                            message={message}
+                            key={message.id}
+                        />
                     );
                 })    
             }</ul>
